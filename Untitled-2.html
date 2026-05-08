@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Maska Farms | Pure Milk. Pure Life.</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --green:#2e7d32;
+      --green-600:#256629;
+      --leaf:#4caf50;
+      --cream:#fffdf7;
+      --milk:#ffffff;
+      --ink:#2b3a2f;
+      --muted:#647a6a;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+      --radius:16px;
+      --maxw:1160px;
+    }
+    *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      scroll-behavior: smooth;
+      font-family: Poppins, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    a{color:var(--green);text-decoration:none;}
+    img{max-width:100%;display:block; transition: transform 0.3s ease;}
+
+    .godaddy-breakout {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .godaddy-breakout {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding: 0;
+      }
+    }
+
+    /* Header */
+    .topbar{padding:20px 20px;display:flex;align-items:center;justify-content:space-between;}
+    .brand a{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .brand img{height:60px;}
+    .brand h1{font-family:'Playfair Display',serif;font-size:24px;margin:0;color:var(--green);}
+    .nav{display:flex;gap:20px;align-items:center;}
+    .nav a{color:var(--ink);font-weight:500; cursor:pointer;}
+    .nav .cta{background:var(--green);color:var(--milk);padding:10px 18px;border-radius:999px;box-shadow:var(--shadow);}
+
+    /* Hero */
+    .hero{padding:40px 20px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
+    .hero-text h2{font-family:'Playfair Display',serif;font-size:46px;margin:0 0 16px;}
+    .hero-text p{font-size:18px;color:var(--muted);margin:0 0 24px;}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+    .btn{border:none;cursor:pointer;border-radius:999px;padding:12px 22px;font-weight:600;box-shadow:var(--shadow); display:inline-flex; align-items:center; justify-content:center; text-align:center;}
+    .btn-primary{background:var(--green);color:var(--milk);}
+    .btn-primary:hover{background:var(--green-600);}
+    .btn-outline{background:transparent;color:var(--green);border:2px solid var(--green);}
+    .btn-outline:hover{background:rgba(46,125,50,0.10);}
+    .hero-media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+    .badge{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,0.95);padding:10px 16px;border-radius:12px;color:var(--ink);font-weight:600; font-size:14px;}
+
+    /* Sections */
+    section{margin:40px auto;padding:0 20px; scroll-margin-top: 40px;}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px;}
+    .section-head h3{font-family:'Playfair Display',serif;font-size:32px;margin:0;}
+    .section-head p{margin:0;color:var(--muted); font-size:16px;}
+
+    .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+    
+    .card{
+      background:var(--milk);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    }
+    .card-img-link{
+      overflow:hidden;
+      border-radius:10px;
+    }
+    .card-img-link:hover img{
+      transform: scale(1.05);
+    }
+    
+    .card h4{margin:4px 0 0;font-size:20px; color:var(--ink);}
+    .card p{margin:0;color:var(--muted);font-size:14px; line-height:1.5;}
+    .card .price{margin-top:auto;font-weight:600;color:var(--green); font-size:16px; margin-bottom: 10px;}
+    .buy-btn{width:100%; padding: 12px; font-size: 15px;}
+
+    /* Contact Section */
+    .contact-box{background:var(--milk); padding:24px; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .contact-actions{display:flex; gap:15px; flex-wrap:wrap; margin-top:20px;}
+
+    footer{margin-top:50px;padding:40px 20px;background:rgba(46,125,50,0.06);}
+    .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;}
+    .foot h6{margin:0 0 12px;font-size:18px; font-family:'Playfair Display',serif;}
+    .foot p,.foot a{color:var(--muted);font-size:15px;margin:8px 0;display:block; cursor:pointer;}
+
+    /* Mobile Responsive Scaling */
+    @media (max-width: 768px) {
+      .topbar { flex-direction: column; padding: 15px 10px; gap: 15px; text-align: center; }
+      .brand img { height: 45px; } 
+      .nav { flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; }
+      .nav a { font-size: 13px; }
+      .nav .cta { padding: 6px 14px; font-size: 12px; }
+
+      .hero { grid-template-columns: 1fr; padding: 10px; gap: 15px; text-align: center; }
+      .hero-text h2 { font-size: 30px; margin-bottom: 8px; }
+      .hero-text p { font-size: 14px; margin-bottom: 15px; }
+      .hero-actions { justify-content: center; }
+      .badge { font-size: 11px; padding: 6px 10px; left: 10px; bottom: 10px; }
+
+      section { margin: 25px auto; padding: 0 10px; }
+      .section-head { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 12px; }
+      .section-head h3 { font-size: 24px; }
+      .section-head p { font-size: 13px; }
+
+      .grid { grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+
+      .card { padding: 12px; gap: 8px; border-radius: 12px; }
+      .card-img-link { border-radius: 8px; }
+      .card h4 { font-size: 14px; margin: 0; line-height: 1.2; }
+      
+      .card p { 
+        font-size: 11px; 
+        line-height: 1.3; 
+        margin: 0; 
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2; /* Fixed: Standard property added */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      
+      .card .price { font-size: 14px; margin-bottom: 4px; }
+      .buy-btn { padding: 8px; font-size: 12px; }
+
+      .contact-box { padding: 15px; }
+      .contact-actions { flex-direction: column; gap: 10px; margin-top: 15px;}
+      .contact-actions .btn { width: 100%; }
+
+      footer { margin-top: 30px; padding: 30px 15px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
+      .footer-inner .foot:first-child { grid-column: span 2; text-align: center; } 
+    }
+  </style>
+</head>
+<body>
+
+<div class="godaddy-breakout">
+
+  <header class="topbar">
+    <div class="brand">
+      <a href="https://maskafarms.godaddysites.com" target="_top">
+        <img src="https://i.ibb.co/4RXbZcjR/6327562570746760367.jpg" alt="Maska Farms logo">
+        <h1>Maska Farms</h1>
+      </a>
+    </div>
+    <nav class="nav">
+      <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'}); return false;">About</a>
+      <a onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'}); return false;">Products</a>
+      <a onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'}); return false;">Why Us</a>
+      <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;" class="cta">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <div class="hero-text">
+      <h2>Pure Milk. Pure Life.</h2>
+      <p>From our green pastures to your family’s table — hormone-free, farm-fresh dairy crafted for wholesome living.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'}); return false;">Shop Now</a>
+        <a class="btn btn-outline" href="https://maps.google.com" target="_blank">Visit Our Farm</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="https://i.ibb.co/4RXbZcjR/6327562570746760367.jpg" alt="Maska Farms promotional image">
+      <div class="badge">Daily fresh delivery • Eco-friendly packaging</div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="section-head">
+      <h3>Our Products</h3>
+      <p>Nutritious, natural, and delivered fresh.</p>
+    </div>
+    <div class="grid">
+      
+      <article class="card">
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Fresh%20Cow%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="card-img-link">
+          <img src="https://i.ibb.co/RTJHNYcY/milk-jpg-3.jpg" alt="Fresh Cow Milk">
+        </a>
+        <h4>Fresh Cow Milk</h4>
+        <p>Rich in calcium and protein, straight from free-grazing cows.</p>
+        <div class="price">From ₹60 / litre</div>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Fresh%20Cow%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+      </article>
+      
+      <article class="card">
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Organic%20Ghee%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="card-img-link">
+          <img src="https://i.ibb.co/ym1KTq8c/ghee-jpg.jpg" alt="Organic Ghee">
+        </a>
+        <h4>Organic Ghee</h4>
+        <p>Slow-cooked for aroma and purity. Perfect for daily wellness.</p>
+        <div class="price">From ₹450 / 500g</div>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Organic%20Ghee%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+      </article>
+      
+      <article class="card">
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Paneer%20%26%20Yogurt%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="card-img-link">
+          <img src="https://i.ibb.co/wh064hR2/6327562570746760375.jpg" alt="Paneer & Yogurt">
+        </a>
+        <h4>Paneer & Yogurt</h4>
+        <p>Soft paneer and probiotic-rich yogurt for wholesome meals.</p>
+        <div class="price">Paneer from ₹280 / kg</div>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Paneer%20%26%20Yogurt%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+      </article>
+      
+      <article class="card">
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Flavored%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="card-img-link">
+          <img src="https://i.ibb.co/TMNvPbdy/flavored-jpg.jpg" alt="Flavored Milk">
+        </a>
+        <h4>Flavored Milk</h4>
+        <p>Almond, cardamom, and saffron — naturally delightful.</p>
+        <div class="price">From ₹35 / 200ml</div>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Flavored%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+      </article>
+      
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head">
+      <h3>Contact us</h3>
+      <p>We’re happy to help you choose the right products.</p>
+    </div>
+    <div class="contact-box">
+        <p><strong>Email:</strong> hello@maskafarms.com</p>
+        <p><strong>Phone:</strong> +91 9580635100</p>
+        
+        <div class="contact-actions">
+            <a href="tel:+919580635100" class="btn btn-outline">📞 Call Us</a>
+            <a href="https://wa.me/919580635100" class="btn btn-primary" target="_blank">💬 WhatsApp Us</a>
+        </div>
+    </div>
+  </section>
+
+  <footer id="why">
+      <div class="footer-inner">
+          <div class="foot">
+              <h6>Maska Farms</h6>
+              <p>Delivering pure, farm-fresh dairy to your doorstep.</p>
+          </div>
+          <div class="foot">
+              <h6>Links</h6>
+              <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'}); return false;">About Us</a>
+              <a onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'}); return false;">Products</a>
+          </div>
+          <div class="foot">
+              <h6>Legal</h6>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+          </div>
+      </div>
+  </footer>
+
+</div> </body>
+</html>
