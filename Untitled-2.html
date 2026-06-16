@@ -34,29 +34,18 @@
       overflow-x: hidden;
     }
 
-    a{color:var(--green);text-decoration:none;}
-    img{max-width:100%;display:block; transition: transform 0.3s ease;}
+    a {color:var(--green);text-decoration:none;}
+    img {max-width:100%;display:block; transition: transform 0.3s ease;}
 
-    .godaddy-breakout {
+    /* Wrapper for standard, clean centering */
+    .container {
       width: 100%;
       max-width: var(--maxw);
       margin: 0 auto;
     }
 
-    @media (max-width: 768px) {
-      .godaddy-breakout {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        padding: 0;
-      }
-    }
-
-    /* Header */
-    .topbar{padding:20px 20px;display:flex;align-items:center;justify-content:space-between;}
+    /* Header (Desktop) */
+    .topbar{padding:20px;display:flex;align-items:center;justify-content:space-between;}
     .brand a{display:flex;align-items:center;gap:12px;text-decoration:none;}
     .brand img{height:60px;}
     .brand h1{font-family:'Playfair Display',serif;font-size:24px;margin:0;color:var(--green);}
@@ -64,7 +53,7 @@
     .nav a{color:var(--ink);font-weight:500; cursor:pointer;}
     .nav .cta{background:var(--green);color:var(--milk);padding:10px 18px;border-radius:999px;box-shadow:var(--shadow);}
 
-    /* Hero */
+    /* Hero (Desktop) */
     .hero{padding:40px 20px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
     .hero-text h2{font-family:'Playfair Display',serif;font-size:46px;margin:0 0 16px;}
     .hero-text p{font-size:18px;color:var(--muted);margin:0 0 24px;}
@@ -77,7 +66,7 @@
     .hero-media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
     .badge{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,0.95);padding:10px 16px;border-radius:12px;color:var(--ink);font-weight:600; font-size:14px;}
 
-    /* Sections */
+    /* Sections (Desktop) */
     section{margin:40px auto;padding:0 20px; scroll-margin-top: 40px;}
     .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px;}
     .section-head h3{font-family:'Playfair Display',serif;font-size:32px;margin:0;}
@@ -85,6 +74,7 @@
 
     .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
     
+    /* Product Cards */
     .card{
       background:var(--milk);
       border-radius:var(--radius);
@@ -112,7 +102,7 @@
     .card .price{margin-top:auto;font-weight:600;color:var(--green); font-size:16px; margin-bottom: 10px;}
     .buy-btn{width:100%; padding: 12px; font-size: 15px;}
 
-    /* Contact Section */
+    /* Contact Section Layout */
     .contact-box{background:var(--milk); padding:24px; border-radius:var(--radius); box-shadow:var(--shadow);}
     .contact-actions{display:flex; gap:15px; flex-wrap:wrap; margin-top:20px;}
 
@@ -121,15 +111,33 @@
     .foot h6{margin:0 0 12px;font-size:18px; font-family:'Playfair Display',serif;}
     .foot p,.foot a{color:var(--muted);font-size:15px;margin:8px 0;display:block; cursor:pointer;}
 
-    /* Mobile Responsive Scaling */
+    /* ========================================= */
+    /* --- NATIVE MOBILE RESPONSIVE SCALING ---  */
+    /* ========================================= */
     @media (max-width: 768px) {
-      .topbar { flex-direction: column; padding: 15px 10px; gap: 15px; text-align: center; }
+      
+      .topbar {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 15px;
+        text-align: center;
+      }
       .brand img { height: 45px; } 
-      .nav { flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; }
+      .nav {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+      }
       .nav a { font-size: 13px; }
       .nav .cta { padding: 6px 14px; font-size: 12px; }
 
-      .hero { grid-template-columns: 1fr; padding: 10px; gap: 15px; text-align: center; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 10px; 
+        gap: 15px;
+        text-align: center;
+      }
       .hero-text h2 { font-size: 30px; margin-bottom: 8px; }
       .hero-text p { font-size: 14px; margin-bottom: 15px; }
       .hero-actions { justify-content: center; }
@@ -140,27 +148,35 @@
       .section-head h3 { font-size: 24px; }
       .section-head p { font-size: 13px; }
 
-      .grid { grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+      /* Standard 2-Column Mobile Grid */
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px; 
+        width: 100%;
+      }
 
-      .card { padding: 12px; gap: 8px; border-radius: 12px; }
+      .card {
+        padding: 12px; 
+        gap: 8px;
+        border-radius: 12px; 
+      }
       .card-img-link { border-radius: 8px; }
       .card h4 { font-size: 14px; margin: 0; line-height: 1.2; }
-      
       .card p { 
         font-size: 11px; 
         line-height: 1.3; 
         margin: 0; 
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        line-clamp: 2; /* Fixed: Standard property added */
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
-      
       .card .price { font-size: 14px; margin-bottom: 4px; }
       .buy-btn { padding: 8px; font-size: 12px; }
 
       .contact-box { padding: 15px; }
+      .contact-box p { font-size: 13px; margin: 6px 0; }
       .contact-actions { flex-direction: column; gap: 10px; margin-top: 15px;}
       .contact-actions .btn { width: 100%; }
 
@@ -172,11 +188,11 @@
 </head>
 <body>
 
-<div class="godaddy-breakout">
+<div class="container">
 
   <header class="topbar">
     <div class="brand">
-      <a href="https://maskafarms.godaddysites.com" target="_top">
+      <a href="index.html">
         <img src="https://i.ibb.co/4RXbZcjR/6327562570746760367.jpg" alt="Maska Farms logo">
         <h1>Maska Farms</h1>
       </a>
@@ -195,7 +211,7 @@
       <p>From our green pastures to your family’s table — hormone-free, farm-fresh dairy crafted for wholesome living.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'}); return false;">Shop Now</a>
-        <a class="btn btn-outline" href="https://maps.google.com" target="_blank">Visit Our Farm</a>
+        <a class="btn btn-outline" href="http://googleusercontent.com/maps.google.com/5" target="_blank">Visit Our Farm</a>
       </div>
     </div>
     <div class="hero-media">
@@ -262,7 +278,6 @@
     <div class="contact-box">
         <p><strong>Email:</strong> hello@maskafarms.com</p>
         <p><strong>Phone:</strong> +91 9580635100</p>
-        
         <div class="contact-actions">
             <a href="tel:+919580635100" class="btn btn-outline">📞 Call Us</a>
             <a href="https://wa.me/919580635100" class="btn btn-primary" target="_blank">💬 WhatsApp Us</a>
@@ -289,5 +304,7 @@
       </div>
   </footer>
 
-</div> </body>
+</div>
+
+</body>
 </html>
