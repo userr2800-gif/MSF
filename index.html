@@ -17,7 +17,7 @@
       --milk:#ffffff;
       --ink:#2b3a2f;
       --muted:#647a6a;
-      --bg-light-green: #eef5ea; /* The lively GoDaddy background color */
+      --bg-light-green: #eef5ea; 
       --shadow:0 10px 30px rgba(0,0,0,0.08);
       --radius:16px;
       --maxw:1160px;
@@ -84,10 +84,10 @@
     .buy-btn{width:100%; padding: 12px; font-size: 15px;}
 
     /* ========================================= */
-    /* LIVELY CONTACT & MAP SECTION              */
+    /* UPDATED LIVELY CONTACT & MAP SECTION      */
     /* ========================================= */
     .location-section {
-      background-color: var(--bg-light-green); /* Lively green background restored */
+      background-color: var(--bg-light-green);
       width: 100%;
       margin-top: 60px;
     }
@@ -112,7 +112,7 @@
       position: absolute;
       font-size: 160px;
       font-weight: 700;
-      color: rgba(46, 125, 50, 0.05); /* Soft faint watermark */
+      color: rgba(46, 125, 50, 0.05);
       top: 50%;
       left: -5%;
       transform: translateY(-50%);
@@ -136,7 +136,6 @@
       max-width: 400px;
     }
 
-    /* Slate WhatsApp Button */
     .btn-wa {
       background-color: #546875;
       color: white;
@@ -176,58 +175,34 @@
       line-height: 1.8;
     }
 
-    /* Interactive Hours Accordion */
-    .hours-dropdown {
-      width: 100%;
-      cursor: pointer;
-    }
-    .hours-dropdown summary {
-      list-style: none;
-      font-size: 16px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      outline: none;
-    }
-    .hours-dropdown summary::-webkit-details-marker { display: none; } /* Hides default arrow */
-    .hours-dropdown summary::after {
-      content: "▼";
-      font-size: 10px;
-      margin-left: 10px;
-      transition: transform 0.3s ease;
-    }
-    .hours-dropdown[open] summary::after {
-      transform: rotate(180deg);
-    }
-    .hours-list {
-      list-style: none;
-      padding: 15px 0 0 0;
-      margin: 0;
-      font-size: 15px;
-      color: var(--muted);
-    }
-    .hours-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
+    .hours-dropdown { width: 100%; cursor: pointer; }
+    .hours-dropdown summary { list-style: none; font-size: 16px; color: var(--muted); display: flex; align-items: center; justify-content: space-between; outline: none; }
+    .hours-dropdown summary::-webkit-details-marker { display: none; }
+    .hours-dropdown summary::after { content: "▼"; font-size: 10px; margin-left: 10px; transition: transform 0.3s ease; }
+    .hours-dropdown[open] summary::after { transform: rotate(180deg); }
+    
+    .hours-list { list-style: none; padding: 15px 0 0 0; margin: 0; font-size: 15px; color: var(--muted); }
+    .hours-list li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
     .hours-list li:last-child { border-bottom: none; }
 
-    /* Map Area & Get Directions Button */
+    /* Map Area - THE CROPPING TRICK */
     .location-map {
       position: relative;
       width: 100%;
       height: 100%;
       min-height: 400px;
+      overflow: hidden; /* This hides anything pushed outside the box */
     }
     .location-map iframe {
+      position: absolute;
+      top: -150px; /* Pushes the white review card UP and out of sight */
+      left: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100% + 150px); /* Adds the height back so the map fills the box */
       border: 0;
       display: block;
     }
+    
     .get-directions-btn {
       position: absolute;
       top: 20px;
@@ -267,17 +242,8 @@
       display: inline-block;
       margin-bottom: 30px;
     }
-    .site-footer h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 18px;
-      margin: 0 0 30px;
-    }
-    .site-footer p {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
-    }
+    .site-footer h3 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 18px; margin: 0 0 30px; }
+    .site-footer p { font-size: 13px; color: var(--muted); margin: 0; }
 
     /* Mobile Responsive Scaling */
     @media (max-width: 768px) {
@@ -309,7 +275,7 @@
       .info-block { flex-direction: column; gap: 10px; margin-bottom: 30px;}
       .location-info > p { max-width: 100%; }
       .location-info::before { font-size: 90px; left: 50%; transform: translate(-50%, -50%); top: 15%; text-align: center;}
-      .location-map iframe { min-height: 400px; }
+      .location-map { min-height: 400px; } /* Ensures the map area has height on mobile */
     }
   </style>
 </head>
@@ -396,14 +362,16 @@
     </div>
   </section>
 
-</div> <section class="location-section" id="contact">
+</div> 
+
+<section class="location-section" id="contact">
   <div class="location-grid">
     <div class="location-info">
       <h5>Better yet, see us in person!</h5>
       <p>We love our customers, so feel free to contact during normal business hours.</p>
       
       <a href="https://wa.me/919580635100" class="btn-wa" target="_blank">
-        <svg xmlns="http://www.w3.org/-svg" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 .003 5.385.003 12.031c0 2.128.555 4.195 1.611 6.012L.003 24l6.113-1.603a11.966 11.966 0 005.915 1.564h.005c6.645 0 12.028-5.385 12.028-12.031S18.676 0 12.031 0zm0 21.969h-.003c-1.802 0-3.568-.484-5.116-1.398l-.367-.217-3.8.997.994-3.712-.238-.378A9.972 9.972 0 012.053 12.03C2.053 6.524 6.524 2.052 12.031 2.052S22.01 6.524 22.01 12.03c0 5.507-4.473 9.939-9.979 9.939zm5.474-7.48c-.3-.151-1.777-.878-2.053-.978-.276-.1-.476-.151-.676.151-.201.301-.777.978-.952 1.178-.176.201-.351.226-.651.076-1.579-.79-2.73-1.428-3.791-3.238-.201-.301.196-.285.767-1.426.101-.201.05-.376-.025-.526-.075-.151-.676-1.628-.926-2.228-.244-.588-.492-.507-.676-.516h-.576c-.2 0-.526.075-.801.376-.275.301-1.052 1.028-1.052 2.508s1.077 2.909 1.227 3.109c.151.201 2.115 3.228 5.127 4.528 1.839.794 2.529.854 3.429.728.983-.138 2.879-1.176 3.28-2.316.4-1.139.4-2.116.275-2.316-.126-.201-.426-.301-.726-.451z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 .003 5.385.003 12.031c0 2.128.555 4.195 1.611 6.012L.003 24l6.113-1.603a11.966 11.966 0 005.915 1.564h.005c6.645 0 12.028-5.385 12.028-12.031S18.676 0 12.031 0zm0 21.969h-.003c-1.802 0-3.568-.484-5.116-1.398l-.367-.217-3.8.997.994-3.712-.238-.378A9.972 9.972 0 012.053 12.03C2.053 6.524 6.524 2.052 12.031 2.052S22.01 6.524 22.01 12.03c0 5.507-4.473 9.939-9.979 9.939zm5.474-7.48c-.3-.151-1.777-.878-2.053-.978-.276-.1-.476-.151-.676.151-.201.301-.777.978-.952 1.178-.176.201-.351.226-.651.076-1.579-.79-2.73-1.428-3.791-3.238-.201-.301.196-.285.767-1.426.101-.201.05-.376-.025-.526-.075-.151-.676-1.628-.926-2.228-.244-.588-.492-.507-.676-.516h-.576c-.2 0-.526.075-.801.376-.275.301-1.052 1.028-1.052 2.508s1.077 2.909 1.227 3.109c.151.201 2.115 3.228 5.127 4.528 1.839.794 2.529.854 3.429.728.983-.138 2.879-1.176 3.28-2.316.4-1.139.4-2.116.275-2.316-.126-.201-.426-.301-.726-.451z"/></svg>
         Message us on WhatsApp
       </a>
       
