@@ -46,7 +46,7 @@
     }
 
     /* ========================================= */
-    /* ORIGINAL HEADER                           */
+    /* HEADER                                    */
     /* ========================================= */
     .topbar{padding:20px;display:flex;align-items:center;justify-content:space-between;}
     .brand a{display:flex;align-items:center;gap:12px;}
@@ -57,22 +57,25 @@
     .nav .cta{background:var(--green);color:var(--milk);padding:10px 18px;border-radius:999px;box-shadow:var(--shadow);}
 
     /* ========================================= */
-    /* ORIGINAL HERO                             */
+    /* HERO                                      */
     /* ========================================= */
     .hero{padding:40px 20px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
     .hero-text h2{font-family:'Playfair Display',serif;font-size:46px;margin:0 0 16px;}
     .hero-text p{font-size:18px;color:var(--muted);margin:0 0 24px;}
     .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-    .btn{border:none;border-radius:999px;padding:12px 22px;font-weight:600;box-shadow:var(--shadow); display:inline-flex; align-items:center; justify-content:center;}
+    
+    /* Green Primary Buttons */
+    .btn{border:none;border-radius:999px;padding:12px 22px;font-weight:600;box-shadow:var(--shadow); display:inline-flex; align-items:center; justify-content:center; transition: all 0.3s ease;}
     .btn-primary{background:var(--green);color:var(--milk);}
-    .btn-primary:hover{background:var(--green-600);}
+    .btn-primary:hover{background:var(--green-600); transform: translateY(-2px);}
     .btn-outline{background:transparent;color:var(--green);border:2px solid var(--green);}
     .btn-outline:hover{background:rgba(46,125,50,0.10);}
+    
     .hero-media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
     .badge{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,0.95);padding:10px 16px;border-radius:12px;color:var(--ink);font-weight:600; font-size:14px;}
 
     /* ========================================= */
-    /* ORIGINAL PRODUCTS SECTION                 */
+    /* PRODUCTS SECTION                          */
     /* ========================================= */
     .products-section{margin:40px auto;padding:0 20px; scroll-margin-top: 40px;}
     .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px;}
@@ -88,10 +91,28 @@
     .card h4{margin:4px 0 0;font-size:20px;}
     .card p{margin:0;color:var(--muted);font-size:14px; line-height:1.5;}
     .card .price{margin-top:auto;font-weight:600;color:var(--green); font-size:16px; margin-bottom: 10px;}
-    .buy-btn{width:100%; padding: 12px; font-size: 15px;}
+    
+    /* Premium Hover-Only Green Button */
+    .buy-btn{
+      width:100%; 
+      padding: 12px; 
+      font-size: 15px;
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--green);
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .buy-btn:hover {
+      background: var(--green);
+      color: var(--milk);
+    }
 
     /* ========================================= */
-    /* PREMIUM CONTACT SECTION (NO MAP HACKS)    */
+    /* PREMIUM CONTACT SECTION (NORMAL MAP)      */
     /* ========================================= */
     .contact-wrapper {
       padding: 80px 20px;
@@ -162,10 +183,34 @@
       overflow: hidden;
       box-shadow: 0 30px 60px rgba(0,0,0,0.12); /* Heavy premium shadow */
       border: 6px solid #ffffff; /* White picture-frame border */
+      display: flex;
+      flex-direction: column;
     }
+    
+    /* Clean Directions Header Above Map */
+    .map-header {
+      background: var(--ink);
+      padding: 15px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .map-get-directions {
+      color: var(--milk);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+    .map-get-directions:hover { color: var(--green); }
+    .map-get-directions svg { width: 16px; height: 16px; fill: currentColor; }
+
     .map-container iframe { 
       width: 100%; 
-      height: 100%; 
+      flex-grow: 1; /* Fills remaining space below header */
       border: 0; 
       background: #eee; 
       display: block;
@@ -277,7 +322,7 @@
         <h4>Fresh Cow Milk</h4>
         <p>Rich in calcium and protein, straight from free-grazing cows.</p>
         <div class="price">From ₹60 / litre</div>
-        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Fresh%20Cow%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Fresh%20Cow%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="buy-btn">Buy on WhatsApp</a>
       </article>
       
       <article class="card">
@@ -287,7 +332,7 @@
         <h4>Organic Ghee</h4>
         <p>Slow-cooked for aroma and purity. Perfect for daily wellness.</p>
         <div class="price">From ₹450 / 500g</div>
-        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Organic%20Ghee%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Organic%20Ghee%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="buy-btn">Buy on WhatsApp</a>
       </article>
       
       <article class="card">
@@ -297,7 +342,7 @@
         <h4>Paneer & Yogurt</h4>
         <p>Soft paneer and probiotic-rich yogurt for wholesome meals.</p>
         <div class="price">Paneer from ₹280 / kg</div>
-        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Paneer%20%26%20Yogurt%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Paneer%20%26%20Yogurt%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="buy-btn">Buy on WhatsApp</a>
       </article>
       
       <article class="card">
@@ -307,7 +352,7 @@
         <h4>Flavored Milk</h4>
         <p>Almond, cardamom, and saffron — naturally delightful.</p>
         <div class="price">From ₹35 / 200ml</div>
-        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Flavored%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Flavored%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="buy-btn">Buy on WhatsApp</a>
       </article>
       
     </div>
@@ -360,6 +405,12 @@
     </div>
     
     <div class="map-container">
+      <div class="map-header">
+        <a href="https://www.google.com/maps?daddr=B-310,+Vardan+Khand,+Sector+1,+Gomti+Nagar,+Lucknow,+UP+226010" target="_blank" class="map-get-directions">
+          <svg viewBox="0 0 24 24"><path d="M21.94 11.23L12.77 2.06c-.4-.4-1.06-.4-1.46 0L2.14 11.23c-.4.4-.4 1.06 0 1.46l9.17 9.17c.4.4 1.06.4 1.46 0l9.17-9.17c.4-.4.4-1.05 0-1.46zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+          GET DIRECTIONS
+        </a>
+      </div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14241.136006440262!2d81.00030588667554!3d26.831034444535312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3005eb1b1e9%3A0xc00f28328dcbeccb!2sMASKA%20FARMS!5e0!3m2!1sen!2sin!4v1713459146197!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     
