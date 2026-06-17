@@ -6,7 +6,7 @@
   <title>Maska Farms | Pure Milk. Pure Life.</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -17,7 +17,7 @@
       --milk:#ffffff;
       --ink:#2b3a2f;
       --muted:#647a6a;
-      --bg-light-green: #f2f7ef;
+      --bg-light-green: #eef5ea; /* The lively GoDaddy background color */
       --shadow:0 10px 30px rgba(0,0,0,0.08);
       --radius:16px;
       --maxw:1160px;
@@ -29,7 +29,7 @@
       padding: 0;
       width: 100%;
       scroll-behavior: smooth;
-      font-family: Poppins, sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: var(--ink);
       background: var(--cream);
       overflow-x: hidden;
@@ -83,9 +83,11 @@
     .card .price{margin-top:auto;font-weight:600;color:var(--green); font-size:16px; margin-bottom: 10px;}
     .buy-btn{width:100%; padding: 12px; font-size: 15px;}
 
-    /* Split-Screen Contact & Map Section */
+    /* ========================================= */
+    /* LIVELY CONTACT & MAP SECTION              */
+    /* ========================================= */
     .location-section {
-      background-color: var(--bg-light-green);
+      background-color: var(--bg-light-green); /* Lively green background restored */
       width: 100%;
       margin-top: 60px;
     }
@@ -94,10 +96,10 @@
       grid-template-columns: 1fr 1fr;
       max-width: var(--maxw);
       margin: 0 auto;
-      min-height: 500px;
+      min-height: 600px;
     }
     .location-info {
-      padding: 60px 40px;
+      padding: 80px 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -108,9 +110,9 @@
     .location-info::before {
       content: "Contact Us";
       position: absolute;
-      font-size: 140px;
+      font-size: 160px;
       font-weight: 700;
-      color: rgba(46, 125, 50, 0.04);
+      color: rgba(46, 125, 50, 0.05); /* Soft faint watermark */
       top: 50%;
       left: -5%;
       transform: translateY(-50%);
@@ -120,56 +122,134 @@
     }
     
     .location-info h5 {
-      font-size: 14px;
+      font-size: 16px;
       letter-spacing: 2px;
       margin: 0 0 20px;
       color: var(--ink);
       text-transform: uppercase;
     }
     .location-info > p {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.6;
       color: var(--muted);
-      margin: 0 0 30px;
-      max-width: 350px;
+      margin: 0 0 35px;
+      max-width: 400px;
     }
+
+    /* Slate WhatsApp Button */
     .btn-wa {
-      background-color: #4a5c68;
+      background-color: #546875;
       color: white;
-      padding: 12px 24px;
+      padding: 14px 28px;
       border-radius: 30px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 500;
       width: fit-content;
       margin-bottom: 40px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 4px 15px rgba(84, 104, 117, 0.3);
+      transition: background-color 0.3s;
     }
-    .btn-wa:hover { background-color: #3b4a54; }
+    .btn-wa:hover { background-color: #40505a; color: white; }
+    .btn-wa svg { width: 22px; height: 22px; fill: currentColor; }
     
-    .info-block { margin-bottom: 30px; }
-    .info-block strong {
-      font-size: 13px;
+    .info-block { margin-bottom: 40px; display: flex; gap: 40px;}
+    .info-block-left { flex: 1;}
+    .info-block-right { flex: 2;}
+    
+    .info-title {
+      font-size: 14px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      display: block;
-      margin-bottom: 10px;
+      font-weight: 600;
       color: var(--ink);
+      margin-bottom: 10px;
+      display: block;
     }
-    .info-block p {
+    .info-text {
       margin: 0;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
-    .location-map iframe {
+    /* Interactive Hours Accordion */
+    .hours-dropdown {
+      width: 100%;
+      cursor: pointer;
+    }
+    .hours-dropdown summary {
+      list-style: none;
+      font-size: 16px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      outline: none;
+    }
+    .hours-dropdown summary::-webkit-details-marker { display: none; } /* Hides default arrow */
+    .hours-dropdown summary::after {
+      content: "▼";
+      font-size: 10px;
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+    .hours-dropdown[open] summary::after {
+      transform: rotate(180deg);
+    }
+    .hours-list {
+      list-style: none;
+      padding: 15px 0 0 0;
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .hours-list li:last-child { border-bottom: none; }
+
+    /* Map Area & Get Directions Button */
+    .location-map {
+      position: relative;
       width: 100%;
       height: 100%;
       min-height: 400px;
+    }
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
       display: block;
+    }
+    .get-directions-btn {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--green);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow);
+      z-index: 10;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    .get-directions-btn:hover {
+      background-color: var(--green-600);
+      color: white;
+      transform: translateX(-50%) scale(1.05);
     }
 
     /* Minimalist Footer */
@@ -225,10 +305,11 @@
       .buy-btn { padding: 8px; font-size: 12px; }
 
       .location-grid { grid-template-columns: 1fr; }
-      .location-info { padding: 40px 20px; text-align: center; align-items: center; }
+      .location-info { padding: 50px 20px; text-align: left; }
+      .info-block { flex-direction: column; gap: 10px; margin-bottom: 30px;}
       .location-info > p { max-width: 100%; }
-      .location-info::before { font-size: 80px; left: 50%; transform: translate(-50%, -50%); top: 30%; text-align: center;}
-      .location-map iframe { min-height: 350px; }
+      .location-info::before { font-size: 90px; left: 50%; transform: translate(-50%, -50%); top: 15%; text-align: center;}
+      .location-map iframe { min-height: 400px; }
     }
   </style>
 </head>
@@ -256,7 +337,7 @@
       <p>From our green pastures to your family’s table — hormone-free, farm-fresh dairy crafted for wholesome living.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'}); return false;">Shop Now</a>
-        <a class="btn btn-outline" href="https://maps.google.com/?cid=9560009524264985199&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank">Visit Our Farm</a>
+        <a class="btn btn-outline" href="https://www.google.com/maps/dir//Maska+Farms,+Vardan+Khand,+Sector+1,+Gomti+Nagar,+Lucknow,+Uttar+Pradesh+226010" target="_blank">Visit Our Farm</a>
       </div>
     </div>
     <div class="hero-media">
@@ -322,22 +403,51 @@
       <p>We love our customers, so feel free to contact during normal business hours.</p>
       
       <a href="https://wa.me/919580635100" class="btn-wa" target="_blank">
-        💬 Message us on WhatsApp
+        <svg xmlns="http://www.w3.org/-svg" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 .003 5.385.003 12.031c0 2.128.555 4.195 1.611 6.012L.003 24l6.113-1.603a11.966 11.966 0 005.915 1.564h.005c6.645 0 12.028-5.385 12.028-12.031S18.676 0 12.031 0zm0 21.969h-.003c-1.802 0-3.568-.484-5.116-1.398l-.367-.217-3.8.997.994-3.712-.238-.378A9.972 9.972 0 012.053 12.03C2.053 6.524 6.524 2.052 12.031 2.052S22.01 6.524 22.01 12.03c0 5.507-4.473 9.939-9.979 9.939zm5.474-7.48c-.3-.151-1.777-.878-2.053-.978-.276-.1-.476-.151-.676.151-.201.301-.777.978-.952 1.178-.176.201-.351.226-.651.076-1.579-.79-2.73-1.428-3.791-3.238-.201-.301.196-.285.767-1.426.101-.201.05-.376-.025-.526-.075-.151-.676-1.628-.926-2.228-.244-.588-.492-.507-.676-.516h-.576c-.2 0-.526.075-.801.376-.275.301-1.052 1.028-1.052 2.508s1.077 2.909 1.227 3.109c.151.201 2.115 3.228 5.127 4.528 1.839.794 2.529.854 3.429.728.983-.138 2.879-1.176 3.28-2.316.4-1.139.4-2.116.275-2.316-.126-.201-.426-.301-.726-.451z"/></svg>
+        Message us on WhatsApp
       </a>
       
       <div class="info-block">
-        <strong>Maska Farms</strong>
-        <p>B-310, Vardan Khand,<br>Sector 1, Gomti Nagar, Lucknow,<br>Uttar Pradesh 226010, India</p>
+        <div class="info-block-left">
+          <span class="info-title">Maska Farms</span>
+        </div>
+        <div class="info-block-right">
+          <p class="info-text">MASKA FARMS, Vardan Khand,<br>Sector 1, Gomti Nagar, Lucknow,<br>Uttar Pradesh, India</p>
+          <p class="info-text" style="margin-top: 15px;">CONTACT: 9580635100</p>
+        </div>
       </div>
 
       <div class="info-block">
-        <strong>Hours</strong>
-        <p>Open today 08:30 am – 08:30 pm</p>
+        <div class="info-block-left">
+          <span class="info-title">Hours</span>
+        </div>
+        <div class="info-block-right">
+          <details class="hours-dropdown">
+            <summary>
+              <div>Open<br>today</div>
+              <span style="font-weight: 500; color: var(--ink);">09:00 am – 06:00 pm</span>
+            </summary>
+            <ul class="hours-list">
+              <li><span>Mon</span> <span>09:00 am – 06:00 pm</span></li>
+              <li><span>Tue</span> <span>09:00 am – 06:00 pm</span></li>
+              <li><span style="font-weight: 600; color: var(--ink);">Wed</span> <span style="font-weight: 600; color: var(--ink);">09:00 am – 06:00 pm</span></li>
+              <li><span>Thu</span> <span>09:00 am – 06:00 pm</span></li>
+              <li><span>Fri</span> <span>09:00 am – 06:00 pm</span></li>
+              <li><span>Sat</span> <span>09:00 am – 06:00 pm</span></li>
+              <li><span>Sun</span> <span>09:00 am – 07:00 pm</span></li>
+            </ul>
+          </details>
+        </div>
       </div>
     </div>
     
     <div class="location-map">
-      <iframe src="https://maps.google.com/?cid=9560009524264985199&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a href="https://www.google.com/maps/dir//Maska+Farms,+Vardan+Khand,+Sector+1,+Gomti+Nagar,+Lucknow,+Uttar+Pradesh+226010" target="_blank" class="get-directions-btn">
+        <svg fill="#ffffff" height="16px" width="16px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.94 11.23L12.77 2.06c-.4-.4-1.06-.4-1.46 0L2.14 11.23c-.4.4-.4 1.06 0 1.46l9.17 9.17c.4.4 1.06.4 1.46 0l9.17-9.17c.4-.4.4-1.05 0-1.46zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+        GET DIRECTIONS
+      </a>
+
+      <iframe src="https://maps.google.com/maps?q=Maska%20Farms,%20Vardan%20Khand,%20Sector%201,%20Gomti%20Nagar,%20Lucknow&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
