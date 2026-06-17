@@ -3,26 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Maska Farms | Pure Milk. Pure Life.</title>
+  <title>Maska Farms | Premium Farm-Fresh Dairy</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --green:#2e7d32;
-      --green-600:#256629;
-      --leaf:#4caf50;
-      --cream:#fffdf7;
-      --milk:#ffffff;
-      --ink:#2b3a2f;
-      --muted:#647a6a;
-      --bg-light-green: #eef5ea; /* The lively GoDaddy background color */
-      --shadow:0 10px 30px rgba(0,0,0,0.08);
-      --radius:16px;
-      --maxw:1160px;
+    :root {
+      --green: #2e7d32;
+      --green-600: #256629;
+      --cream: #fbfaf6; /* Warmer, ultra-premium off-white */
+      --milk: #ffffff;
+      --ink: #1a241c; /* Deepest forest almost-black */
+      --muted: #5a6b5d;
+      --slate: #3b4a54; /* Classy slate for accents */
+      --shadow: 0 20px 40px rgba(0,0,0,0.06);
+      --border: rgba(46, 125, 50, 0.15);
+      --radius: 24px; /* Modern, smooth rounding */
+      --maxw: 1200px;
     }
-    *{box-sizing:border-box; -webkit-tap-highlight-color: transparent;}
+    
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     
     html, body {
       margin: 0;
@@ -35,281 +36,265 @@
       overflow-x: hidden;
     }
 
-    a {color:var(--green);text-decoration:none; cursor:pointer;}
-    img {max-width:100%;display:block; transition: transform 0.3s ease;}
+    a { color: var(--green); text-decoration: none; cursor: pointer; }
+    img { max-width: 100%; display: block; transition: transform 0.4s ease; }
 
-    .container {
-      width: 100%;
-      max-width: var(--maxw);
-      margin: 0 auto;
-    }
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; }
 
-    /* Header */
-    .topbar{padding:20px;display:flex;align-items:center;justify-content:space-between;}
-    .brand a{display:flex;align-items:center;gap:12px;}
-    .brand img{height:60px;}
-    .brand h1{font-family:'Playfair Display',serif;font-size:24px;margin:0;}
-    .nav{display:flex;gap:20px;align-items:center;}
-    .nav a{color:var(--ink);font-weight:500;}
-    .nav .cta{background:var(--green);color:var(--milk);padding:10px 18px;border-radius:999px;box-shadow:var(--shadow);}
+    /* ========================================= */
+    /* HEADER                                    */
+    /* ========================================= */
+    .topbar { padding: 25px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .brand a { display: flex; align-items: center; gap: 14px; }
+    .brand img { height: 55px; }
+    .brand h1 { font-family: 'Playfair Display', serif; font-size: 26px; margin: 0; color: var(--ink); letter-spacing: -0.5px;}
+    .nav { display: flex; gap: 30px; align-items: center; }
+    .nav a { color: var(--ink); font-weight: 500; font-size: 15px; transition: color 0.3s; }
+    .nav a:hover { color: var(--green); }
+    .nav .cta { background: var(--ink); color: var(--milk); padding: 12px 24px; border-radius: 999px; transition: background 0.3s; }
+    .nav .cta:hover { background: var(--green); color: var(--milk); }
 
-    /* Hero */
-    .hero{padding:40px 20px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
-    .hero-text h2{font-family:'Playfair Display',serif;font-size:46px;margin:0 0 16px;}
-    .hero-text p{font-size:18px;color:var(--muted);margin:0 0 24px;}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-    .btn{border:none;border-radius:999px;padding:12px 22px;font-weight:600;box-shadow:var(--shadow); display:inline-flex; align-items:center; justify-content:center;}
-    .btn-primary{background:var(--green);color:var(--milk);}
-    .btn-primary:hover{background:var(--green-600);}
-    .btn-outline{background:transparent;color:var(--green);border:2px solid var(--green);}
-    .btn-outline:hover{background:rgba(46,125,50,0.10);}
-    .hero-media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
-    .badge{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,0.95);padding:10px 16px;border-radius:12px;color:var(--ink);font-weight:600; font-size:14px;}
-
-    /* Products Section */
-    .products-section{margin:40px auto;padding:0 20px; scroll-margin-top: 40px;}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px;}
-    .section-head h3{font-family:'Playfair Display',serif;font-size:32px;margin:0;}
-    .section-head p{margin:0;color:var(--muted); font-size:16px;}
-
-    .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+    /* ========================================= */
+    /* HERO                                      */
+    /* ========================================= */
+    .hero { padding: 60px 20px 40px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
+    .hero-text h2 { font-family: 'Playfair Display', serif; font-size: 56px; margin: 0 0 20px; line-height: 1.1; color: var(--ink); }
+    .hero-text p { font-size: 18px; color: var(--muted); margin: 0 0 35px; line-height: 1.6; max-width: 480px; }
+    .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+    .btn { border: none; border-radius: 999px; padding: 15px 30px; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; letter-spacing: 0.5px; transition: all 0.3s ease; }
+    .btn-primary { background: var(--green); color: var(--milk); box-shadow: 0 8px 20px rgba(46, 125, 50, 0.25); }
+    .btn-primary:hover { background: var(--green-600); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--green); color: var(--green); }
     
-    .card{background:var(--milk);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;display:flex;flex-direction:column;gap:12px;transition: transform 0.3s ease, box-shadow 0.3s ease;}
-    .card:hover{transform: translateY(-8px);box-shadow: 0 18px 40px rgba(0,0,0,0.12);}
-    .card-img-link{overflow:hidden;border-radius:10px;}
-    .card-img-link:hover img{transform: scale(1.05);}
-    .card h4{margin:4px 0 0;font-size:20px;}
-    .card p{margin:0;color:var(--muted);font-size:14px; line-height:1.5;}
-    .card .price{margin-top:auto;font-weight:600;color:var(--green); font-size:16px; margin-bottom: 10px;}
-    .buy-btn{width:100%; padding: 12px; font-size: 15px;}
+    .hero-media { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .badge { position: absolute; left: 20px; bottom: 20px; background: rgba(255,255,255,0.95); padding: 12px 20px; border-radius: 16px; color: var(--ink); font-weight: 500; font-size: 14px; backdrop-filter: blur(10px); }
 
     /* ========================================= */
-    /* LIVELY CONTACT & MAP SECTION              */
+    /* PRODUCTS                                  */
     /* ========================================= */
-    .location-section {
-      background-color: var(--bg-light-green); /* Lively green background restored */
-      width: 100%;
-      margin-top: 60px;
+    .products-section { margin: 80px auto; padding: 0 20px; scroll-margin-top: 40px; }
+    .section-head { margin-bottom: 40px; text-align: left; }
+    .section-head h3 { font-family: 'Playfair Display', serif; font-size: 40px; margin: 0 0 10px; color: var(--ink); }
+    .section-head p { margin: 0; color: var(--muted); font-size: 16px; }
+
+    .grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    
+    .card { background: var(--milk); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.03); padding: 20px; display: flex; flex-direction: column; gap: 16px; transition: all 0.4s ease; }
+    .card:hover { transform: translateY(-10px); box-shadow: var(--shadow); border-color: transparent; }
+    .card-img-link { overflow: hidden; border-radius: 16px; }
+    .card-img-link:hover img { transform: scale(1.06); }
+    .card h4 { margin: 0; font-size: 22px; font-family: 'Playfair Display', serif; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .card .price { margin-top: auto; font-weight: 600; color: var(--ink); font-size: 16px; margin-bottom: 10px; }
+    
+    /* Elegant Buy Button */
+    .buy-btn { width: 100%; padding: 14px; font-size: 14px; border: 1px solid var(--border); border-radius: 12px; background: transparent; color: var(--green); font-weight: 600; text-align: center; transition: all 0.3s ease; }
+    .buy-btn:hover { background: var(--green); color: var(--milk); border-color: var(--green); }
+
+    /* ========================================= */
+    /* NEW-GEN PREMIUM CONTACT SECTION           */
+    /* ========================================= */
+    .contact-wrapper {
+      padding: 100px 20px;
+      background: var(--milk);
+      border-top: 1px solid rgba(0,0,0,0.03);
     }
-    .location-grid {
+    .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 80px;
       max-width: var(--maxw);
       margin: 0 auto;
-      min-height: 600px;
-    }
-    .location-info {
-      padding: 80px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-    .location-info::before {
-      content: "Contact Us";
-      position: absolute;
-      font-size: 160px;
-      font-weight: 700;
-      color: rgba(46, 125, 50, 0.05); /* Soft faint watermark */
-      top: 50%;
-      left: -5%;
-      transform: translateY(-50%);
-      z-index: -1;
-      line-height: 0.8;
-      pointer-events: none;
+      align-items: center;
     }
     
-    .location-info h5 {
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin: 0 0 20px;
-      color: var(--ink);
-      text-transform: uppercase;
+    /* Left Side: Editorial Text */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
     }
-    .location-info > p {
+    .contact-overline {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 15px;
+    }
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 0 0 25px;
+      color: var(--ink);
+    }
+    .contact-info > p {
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: var(--muted);
-      margin: 0 0 35px;
-      max-width: 400px;
+      margin: 0 0 40px;
+      max-width: 90%;
     }
 
-    /* Slate WhatsApp Button */
+    /* Classy Slate WhatsApp Button */
     .btn-wa {
-      background-color: #546875;
+      background-color: var(--slate);
       color: white;
-      padding: 14px 28px;
-      border-radius: 30px;
+      padding: 16px 32px;
+      border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      font-size: 16px;
+      gap: 12px;
+      font-size: 15px;
       font-weight: 500;
+      letter-spacing: 0.5px;
       width: fit-content;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 15px rgba(84, 104, 117, 0.3);
-      transition: background-color 0.3s;
+      margin-bottom: 50px;
+      box-shadow: 0 10px 25px rgba(59, 74, 84, 0.25);
+      transition: all 0.3s ease;
     }
-    .btn-wa:hover { background-color: #40505a; color: white; }
-    .btn-wa svg { width: 22px; height: 22px; fill: currentColor; }
+    .btn-wa:hover { background-color: var(--ink); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(26, 36, 28, 0.2); }
+    .btn-wa svg { width: 20px; height: 20px; fill: currentColor; }
     
-    .info-block { margin-bottom: 40px; display: flex; gap: 40px;}
-    .info-block-left { flex: 1;}
-    .info-block-right { flex: 2;}
-    
-    .info-title {
-      font-size: 14px;
+    /* Clean Divider Details */
+    .detail-row {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .detail-row:last-child { border-bottom: 1px solid var(--border); }
+    .detail-label {
+      font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
       font-weight: 600;
+      color: var(--muted);
+    }
+    .detail-text {
+      font-size: 16px;
       color: var(--ink);
-      margin-bottom: 10px;
-      display: block;
-    }
-    .info-text {
+      line-height: 1.6;
       margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
     }
 
-    /* Interactive Hours Accordion */
-    .hours-dropdown {
-      width: 100%;
-      cursor: pointer;
-    }
+    /* Interactive Premium Hours Accordion */
+    .hours-dropdown { width: 100%; cursor: pointer; }
     .hours-dropdown summary {
-      list-style: none;
-      font-size: 16px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      outline: none;
+      list-style: none; outline: none; display: flex; justify-content: space-between; align-items: center;
     }
-    .hours-dropdown summary::-webkit-details-marker { display: none; } /* Hides default arrow */
-    .hours-dropdown summary::after {
-      content: "▼";
-      font-size: 10px;
-      margin-left: 10px;
-      transition: transform 0.3s ease;
-    }
-    .hours-dropdown[open] summary::after {
-      transform: rotate(180deg);
-    }
+    .hours-dropdown summary::-webkit-details-marker { display: none; }
+    .hours-main { display: flex; flex-direction: column; gap: 4px; }
+    .hours-status { font-weight: 500; color: var(--green); }
+    .hours-arrow { transition: transform 0.3s ease; font-size: 12px; color: var(--muted); }
+    .hours-dropdown[open] .hours-arrow { transform: rotate(180deg); }
+    
     .hours-list {
-      list-style: none;
-      padding: 15px 0 0 0;
-      margin: 0;
-      font-size: 15px;
-      color: var(--muted);
+      list-style: none; padding: 20px 0 0 0; margin: 0; font-size: 14px; color: var(--muted);
     }
-    .hours-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
+    .hours-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed rgba(0,0,0,0.05); }
     .hours-list li:last-child { border-bottom: none; }
+    .hours-list .today { font-weight: 600; color: var(--ink); }
 
-    /* Map Area & Get Directions Button */
-    .location-map {
+    /* Right Side: Floating Map Card */
+    .map-container {
       position: relative;
       width: 100%;
-      height: 100%;
-      min-height: 400px;
+      height: 600px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12); /* Heavy premium shadow */
+      border: 6px solid #ffffff; /* White picture-frame border */
     }
-    .location-map iframe {
+    .map-container iframe {
       width: 100%;
       height: 100%;
       border: 0;
-      display: block;
+      background: #eee;
     }
-    .get-directions-btn {
+    
+    /* OVERLAY BUTTON: This hides the ugly Google Rating Card! */
+    .map-overlay-btn {
       position: absolute;
       top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--green);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-size: 14px;
+      left: 20px;
+      background-color: var(--ink);
+      color: var(--milk);
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-size: 13px;
       font-weight: 600;
+      letter-spacing: 1px;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      box-shadow: var(--shadow);
+      gap: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       z-index: 10;
-      transition: transform 0.2s, background-color 0.2s;
+      transition: all 0.3s ease;
     }
-    .get-directions-btn:hover {
-      background-color: var(--green-600);
-      color: white;
-      transform: translateX(-50%) scale(1.05);
-    }
+    .map-overlay-btn:hover { background-color: var(--green); transform: scale(1.02); }
+    .map-overlay-btn svg { width: 16px; height: 16px; fill: currentColor; }
 
-    /* Minimalist Footer */
+    /* ========================================= */
+    /* MINIMAL FOOTER                            */
+    /* ========================================= */
     .site-footer {
       text-align: center;
       padding: 60px 20px 40px;
-      background: var(--milk);
+      background: var(--cream);
     }
     .footer-home {
       font-size: 13px;
       letter-spacing: 3px;
       font-weight: 600;
-      color: var(--ink);
+      color: var(--muted);
       text-transform: uppercase;
       display: inline-block;
       margin-bottom: 30px;
+      transition: color 0.3s;
     }
-    .site-footer h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 18px;
-      margin: 0 0 30px;
-    }
-    .site-footer p {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
-    }
+    .footer-home:hover { color: var(--ink); }
+    .site-footer h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 22px; margin: 0 0 10px; color: var(--ink); }
+    .site-footer p { font-size: 13px; color: var(--muted); margin: 0; }
 
-    /* Mobile Responsive Scaling */
+    /* ========================================= */
+    /* MOBILE RESPONSIVE SCALING                 */
+    /* ========================================= */
     @media (max-width: 768px) {
-      .topbar { flex-direction: column; padding: 15px 10px; gap: 15px; text-align: center; }
+      .topbar { flex-direction: column; padding: 20px 10px; gap: 20px; text-align: center; }
       .brand img { height: 45px; } 
-      .nav { flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; }
-      .nav a { font-size: 13px; }
-      .nav .cta { padding: 6px 14px; font-size: 12px; }
+      .nav { flex-wrap: wrap; justify-content: center; gap: 15px; width: 100%; }
+      .nav a { font-size: 14px; }
+      .nav .cta { padding: 8px 20px; font-size: 13px; }
 
-      .hero { grid-template-columns: 1fr; padding: 10px; gap: 15px; text-align: center; }
-      .hero-text h2 { font-size: 30px; margin-bottom: 8px; }
-      .hero-text p { font-size: 14px; margin-bottom: 15px; }
+      .hero { grid-template-columns: 1fr; padding: 20px 10px; gap: 30px; text-align: center; }
+      .hero-text h2 { font-size: 38px; margin-bottom: 12px; }
+      .hero-text p { font-size: 15px; margin: 0 auto 25px; }
       .hero-actions { justify-content: center; }
+      .badge { font-size: 12px; padding: 10px 15px; left: 10px; bottom: 10px; }
 
-      .products-section { margin: 25px auto; padding: 0 10px; }
-      .section-head { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 12px; }
-      .section-head h3 { font-size: 24px; }
-      .section-head p { font-size: 13px; }
+      .products-section { margin: 60px auto; padding: 0 10px; }
+      .section-head { text-align: center; align-items: center; margin-bottom: 30px;}
+      .section-head h3 { font-size: 32px; }
 
-      .grid { grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
-      .card { padding: 12px; gap: 8px; border-radius: 12px; }
-      .card h4 { font-size: 14px; margin: 0; line-height: 1.2; }
-      .card p { font-size: 11px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-      .card .price { font-size: 14px; margin-bottom: 4px; }
-      .buy-btn { padding: 8px; font-size: 12px; }
+      /* Standard 2-Column Mobile Grid */
+      .grid { grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+      .card { padding: 12px; gap: 10px; border-radius: 16px; }
+      .card h4 { font-size: 16px; margin: 0; line-height: 1.2; }
+      .card p { font-size: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      .buy-btn { padding: 10px; font-size: 13px; border-radius: 8px;}
 
-      .location-grid { grid-template-columns: 1fr; }
-      .location-info { padding: 50px 20px; text-align: left; }
-      .info-block { flex-direction: column; gap: 10px; margin-bottom: 30px;}
-      .location-info > p { max-width: 100%; }
-      .location-info::before { font-size: 90px; left: 50%; transform: translate(-50%, -50%); top: 15%; text-align: center;}
-      .location-map iframe { min-height: 400px; }
+      /* Mobile Contact Section */
+      .contact-wrapper { padding: 60px 15px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-info h2 { font-size: 38px; }
+      
+      .map-container { height: 450px; border-width: 4px; }
+      /* Adjust overlay button for mobile to sit neatly inside the frame */
+      .map-overlay-btn { top: 15px; left: 15px; padding: 12px 20px; font-size: 11px; }
     }
   </style>
 </head>
@@ -333,7 +318,7 @@
 
   <section class="hero" id="about">
     <div class="hero-text">
-      <h2>Pure Milk. Pure Life.</h2>
+      <h2>Pure Milk.<br>Pure Life.</h2>
       <p>From our green pastures to your family’s table — hormone-free, farm-fresh dairy crafted for wholesome living.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'}); return false;">Shop Now</a>
@@ -342,7 +327,7 @@
     </div>
     <div class="hero-media">
       <img src="https://i.ibb.co/4RXbZcjR/6327562570746760367.jpg" alt="Maska Farms promotional image">
-      <div class="badge">Daily fresh delivery • Eco-friendly packaging</div>
+      <div class="badge">Daily fresh delivery • Eco-friendly</div>
     </div>
   </section>
 
@@ -360,7 +345,7 @@
         <h4>Fresh Cow Milk</h4>
         <p>Rich in calcium and protein, straight from free-grazing cows.</p>
         <div class="price">From ₹60 / litre</div>
-        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Fresh%20Cow%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Fresh%20Cow%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="buy-btn">Buy on WhatsApp</a>
       </article>
       
       <article class="card">
@@ -370,7 +355,7 @@
         <h4>Organic Ghee</h4>
         <p>Slow-cooked for aroma and purity. Perfect for daily wellness.</p>
         <div class="price">From ₹450 / 500g</div>
-        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Organic%20Ghee%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Organic%20Ghee%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="buy-btn">Buy on WhatsApp</a>
       </article>
       
       <article class="card">
@@ -380,7 +365,7 @@
         <h4>Paneer & Yogurt</h4>
         <p>Soft paneer and probiotic-rich yogurt for wholesome meals.</p>
         <div class="price">Paneer from ₹280 / kg</div>
-        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Paneer%20%26%20Yogurt%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Paneer%20%26%20Yogurt%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="buy-btn">Buy on WhatsApp</a>
       </article>
       
       <article class="card">
@@ -390,70 +375,72 @@
         <h4>Flavored Milk</h4>
         <p>Almond, cardamom, and saffron — naturally delightful.</p>
         <div class="price">From ₹35 / 200ml</div>
-        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Flavored%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="btn btn-primary buy-btn">Buy on WhatsApp</a>
+        <a href="https://wa.me/919580635100?text=Product%20Name%20%3D%20Flavored%20Milk%0ARequired%20Qty%20%3D%20%0ADate%20and%20time%20for%20delivery%20%3D%20%0APrice%20%3D%20%3F" target="_blank" class="buy-btn">Buy on WhatsApp</a>
       </article>
       
     </div>
   </section>
 
-</div> <section class="location-section" id="contact">
-  <div class="location-grid">
-    <div class="location-info">
-      <h5>Better yet, see us in person!</h5>
-      <p>We love our customers, so feel free to contact during normal business hours.</p>
+</div> <section class="contact-wrapper" id="contact">
+  <div class="contact-grid">
+    
+    <div class="contact-info">
+      <span class="contact-overline">Get in Touch</span>
+      <h2>Better yet, see us in person.</h2>
+      <p>We love our customers, so feel free to reach out or visit us during normal business hours to experience farm-fresh goodness.</p>
       
       <a href="https://wa.me/919580635100" class="btn-wa" target="_blank">
-        <svg xmlns="http://www.w3.org/-svg" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 .003 5.385.003 12.031c0 2.128.555 4.195 1.611 6.012L.003 24l6.113-1.603a11.966 11.966 0 005.915 1.564h.005c6.645 0 12.028-5.385 12.028-12.031S18.676 0 12.031 0zm0 21.969h-.003c-1.802 0-3.568-.484-5.116-1.398l-.367-.217-3.8.997.994-3.712-.238-.378A9.972 9.972 0 012.053 12.03C2.053 6.524 6.524 2.052 12.031 2.052S22.01 6.524 22.01 12.03c0 5.507-4.473 9.939-9.979 9.939zm5.474-7.48c-.3-.151-1.777-.878-2.053-.978-.276-.1-.476-.151-.676.151-.201.301-.777.978-.952 1.178-.176.201-.351.226-.651.076-1.579-.79-2.73-1.428-3.791-3.238-.201-.301.196-.285.767-1.426.101-.201.05-.376-.025-.526-.075-.151-.676-1.628-.926-2.228-.244-.588-.492-.507-.676-.516h-.576c-.2 0-.526.075-.801.376-.275.301-1.052 1.028-1.052 2.508s1.077 2.909 1.227 3.109c.151.201 2.115 3.228 5.127 4.528 1.839.794 2.529.854 3.429.728.983-.138 2.879-1.176 3.28-2.316.4-1.139.4-2.116.275-2.316-.126-.201-.426-.301-.726-.451z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 .003 5.385.003 12.031c0 2.128.555 4.195 1.611 6.012L.003 24l6.113-1.603a11.966 11.966 0 005.915 1.564h.005c6.645 0 12.028-5.385 12.028-12.031S18.676 0 12.031 0zm0 21.969h-.003c-1.802 0-3.568-.484-5.116-1.398l-.367-.217-3.8.997.994-3.712-.238-.378A9.972 9.972 0 012.053 12.03C2.053 6.524 6.524 2.052 12.031 2.052S22.01 6.524 22.01 12.03c0 5.507-4.473 9.939-9.979 9.939zm5.474-7.48c-.3-.151-1.777-.878-2.053-.978-.276-.1-.476-.151-.676.151-.201.301-.777.978-.952 1.178-.176.201-.351.226-.651.076-1.579-.79-2.73-1.428-3.791-3.238-.201-.301.196-.285.767-1.426.101-.201.05-.376-.025-.526-.075-.151-.676-1.628-.926-2.228-.244-.588-.492-.507-.676-.516h-.576c-.2 0-.526.075-.801.376-.275.301-1.052 1.028-1.052 2.508s1.077 2.909 1.227 3.109c.151.201 2.115 3.228 5.127 4.528 1.839.794 2.529.854 3.429.728.983-.138 2.879-1.176 3.28-2.316.4-1.139.4-2.116.275-2.316-.126-.201-.426-.301-.726-.451z"/></svg>
         Message us on WhatsApp
       </a>
       
-      <div class="info-block">
-        <div class="info-block-left">
-          <span class="info-title">Maska Farms</span>
-        </div>
-        <div class="info-block-right">
-          <p class="info-text">MASKA FARMS, Vardan Khand,<br>Sector 1, Gomti Nagar, Lucknow,<br>Uttar Pradesh, India</p>
-          <p class="info-text" style="margin-top: 15px;">CONTACT: 9580635100</p>
-        </div>
+      <div class="detail-row">
+        <span class="detail-label">Location</span>
+        <p class="detail-text">B-310, Vardan Khand, Sector 1<br>Gomti Nagar, Lucknow, UP 226010</p>
+      </div>
+      
+      <div class="detail-row">
+        <span class="detail-label">Direct Contact</span>
+        <p class="detail-text">+91 9580635100</p>
       </div>
 
-      <div class="info-block">
-        <div class="info-block-left">
-          <span class="info-title">Hours</span>
-        </div>
-        <div class="info-block-right">
-          <details class="hours-dropdown">
-            <summary>
-              <div>Open<br>today</div>
-              <span style="font-weight: 500; color: var(--ink);">09:00 am – 06:00 pm</span>
-            </summary>
-            <ul class="hours-list">
-              <li><span>Mon</span> <span>09:00 am – 06:00 pm</span></li>
-              <li><span>Tue</span> <span>09:00 am – 06:00 pm</span></li>
-              <li><span style="font-weight: 600; color: var(--ink);">Wed</span> <span style="font-weight: 600; color: var(--ink);">09:00 am – 06:00 pm</span></li>
-              <li><span>Thu</span> <span>09:00 am – 06:00 pm</span></li>
-              <li><span>Fri</span> <span>09:00 am – 06:00 pm</span></li>
-              <li><span>Sat</span> <span>09:00 am – 06:00 pm</span></li>
-              <li><span>Sun</span> <span>09:00 am – 07:00 pm</span></li>
-            </ul>
-          </details>
-        </div>
+      <div class="detail-row">
+        <span class="detail-label">Business Hours</span>
+        <details class="hours-dropdown">
+          <summary>
+            <div class="hours-main">
+              <span class="hours-status">Open Today</span>
+              <span class="detail-text">08:30 am – 08:30 pm</span>
+            </div>
+            <span class="hours-arrow">▼</span>
+          </summary>
+          <ul class="hours-list">
+            <li><span>Monday</span> <span>08:30 am – 08:30 pm</span></li>
+            <li><span>Tuesday</span> <span>08:30 am – 08:30 pm</span></li>
+            <li class="today"><span>Wednesday</span> <span>08:30 am – 08:30 pm</span></li>
+            <li><span>Thursday</span> <span>08:30 am – 08:30 pm</span></li>
+            <li><span>Friday</span> <span>08:30 am – 08:30 pm</span></li>
+            <li><span>Saturday</span> <span>08:30 am – 08:30 pm</span></li>
+            <li><span>Sunday</span> <span>08:30 am – 08:30 pm</span></li>
+          </ul>
+        </details>
       </div>
     </div>
     
-    <div class="location-map">
-      <a href="https://www.google.com/maps/dir//Maska+Farms,+Vardan+Khand,+Sector+1,+Gomti+Nagar,+Lucknow,+Uttar+Pradesh+226010" target="_blank" class="get-directions-btn">
-        <svg fill="#ffffff" height="16px" width="16px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.94 11.23L12.77 2.06c-.4-.4-1.06-.4-1.46 0L2.14 11.23c-.4.4-.4 1.06 0 1.46l9.17 9.17c.4.4 1.06.4 1.46 0l9.17-9.17c.4-.4.4-1.05 0-1.46zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+    <div class="map-container">
+      <a href="https://www.google.com/maps/dir//Maska+Farms,+Vardan+Khand,+Sector+1,+Gomti+Nagar,+Lucknow,+Uttar+Pradesh+226010" target="_blank" class="map-overlay-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.94 11.23L12.77 2.06c-.4-.4-1.06-.4-1.46 0L2.14 11.23c-.4.4-.4 1.06 0 1.46l9.17 9.17c.4.4 1.06.4 1.46 0l9.17-9.17c.4-.4.4-1.05 0-1.46zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
         GET DIRECTIONS
       </a>
 
       <iframe src="https://maps.google.com/maps?q=Maska%20Farms,%20Vardan%20Khand,%20Sector%201,%20Gomti%20Nagar,%20Lucknow&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+    
   </div>
 </section>
 
 <footer class="site-footer">
-  <a onclick="document.getElementById('top').scrollIntoView({behavior:'smooth'}); return false;" class="footer-home">HOME</a>
+  <a onclick="document.getElementById('top').scrollIntoView({behavior:'smooth'}); return false;" class="footer-home">Back to Top ↑</a>
   <h3>Maska Farms</h3>
   <p>Copyright © 2026 Maska Farms - All Rights Reserved.</p>
 </footer>
